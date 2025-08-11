@@ -1,7 +1,4 @@
-
-## Custom Stage Loader
-
-There is a built-in mod called "" in this mod manager.
+# Custom Stage Loader
 
 This mod allows you to add rethemed stages.
 
@@ -37,7 +34,7 @@ Arena:
 
 If this file is missing or has an invalid stage name, it will automatically default to the "arena" stage.
 
-### Limitations with custom stages
+## Limitations with custom stages
 
 - You cannot add or remove maps while you are at the map selection screen. You'll need to get out of the map selection and go back to it, in order for the map list to update.
 - If you change stage thumbnails while you're in the map selection screen, you need to hover out and back on top of the stage icon, in order to see the changes.
