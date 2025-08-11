@@ -39,4 +39,5 @@ If this file is missing or has an invalid stage name, it will automatically defa
 - You cannot add or remove maps while you are at the map selection screen. You'll need to get out of the map selection and go back to it, in order for the map list to update.
 - If you change stage thumbnails while you're in the map selection screen, you need to hover out and back on top of the stage icon, in order to see the changes.
 - For multiplayer, both users need the map downloaded to view them. Also, it's based on the folder name as well. If they don't have the map or play on an unmodded version, they will see the original map.
-- Do not edit `stage.json` during a match or else problems may occur with replays.
+- Do not edit `stage.json` during a match. Additionally, changing `stage.json` might break replays.
+
