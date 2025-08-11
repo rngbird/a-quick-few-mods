@@ -102,11 +102,11 @@ if (stage_selected)
 
         if (_config != undefined) {
             switch(_config.stage) {
+                case "tower":
+                    _overall_struct.stage = rm_tower;
+                    break;
                 case "woods":
                     _overall_struct.stage = rm_woods;
-                    break;
-                case "arena":
-                    _overall_struct.stage = rm_arena;
                     break;
             }
         }

@@ -9,8 +9,6 @@ if (setting().match_stage >= 1000)
     {
         obj_name = "modmanager/stages/" + _name + "/stage.obj";
     }
-    
-    setting().match_stage = rm_woods; // to fix replays (won't show custom bg)
 }
 
 /// END
