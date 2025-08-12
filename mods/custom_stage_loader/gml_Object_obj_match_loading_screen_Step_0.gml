@@ -12,18 +12,6 @@
         var _name = get_custom_stage_name_by_zone_stage(setting().match_stage);
         var _config = get_custom_stage_config(_name);
 
-        if (_config != undefined) {
-            switch(_config.stage) {
-                case "tower":
-                    room_goto(rm_tower);
-                    return;
-                case "woods":
-                    room_goto(rm_woods);
-                    return;
-            }
-        }
-        
-        // default stage is "arena"
-        room_goto(rm_arena);
+        room_goto(get_stage_config_to_room(_config));
     }
 /// END

@@ -1,5 +1,23 @@
 /// FUNCTIONS
 
+function get_stage_config_to_room(config)
+{
+    if (config != undefined) {
+        switch(config.stage) {
+            case "training":
+                return rm_training;
+            case "tower":
+                return rm_tower;
+            case "woods":
+                return rm_woods;
+            case "arena":
+                return rm_arena;
+        }
+    }
+    // defaults to "arena"
+    return rm_arena;
+}
+
 function get_custom_stage_config(stage)
 {
     var _path = "modmanager/stages/" + stage + "/config.json";

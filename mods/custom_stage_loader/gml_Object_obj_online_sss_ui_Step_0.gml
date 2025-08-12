@@ -97,19 +97,7 @@ if (stage_selected)
         var _name = get_custom_stage_name_by_zone_stage(_sent_match_stage);
         var _config = get_custom_stage_config(_name);
 
-        // default stage is "arena"
-        _overall_struct.stage = rm_arena;
-
-        if (_config != undefined) {
-            switch(_config.stage) {
-                case "tower":
-                    _overall_struct.stage = rm_tower;
-                    break;
-                case "woods":
-                    _overall_struct.stage = rm_woods;
-                    break;
-            }
-        }
+        _overall_struct.stage = get_stage_config_to_room(_config);
         
         // csl stands for "custom stage loader", name = map name in folder
         _overall_struct.csl_name = _name;

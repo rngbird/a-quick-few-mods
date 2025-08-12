@@ -8,6 +8,14 @@ Also, add a `stage.obj` for the actual retehemed stage.
 
 In order to choose which stage the stage is based off of, create a `config.json` file and set the file to be either one of these:
 
+Training:
+
+```json
+{
+  "stage": "training"
+}
+```
+
 Tower:
 
 ```json
@@ -40,4 +48,3 @@ If this file is missing or has an invalid stage name, it will automatically defa
 - If you change stage thumbnails while you're in the map selection screen, you need to hover out and back on top of the stage icon, in order to see the changes.
 - For multiplayer, both users need the map downloaded to view them. Also, it's based on the folder name as well. If they don't have the map or play on an unmodded version, they will see the original map.
 - Do not edit `stage.json` during a match. Additionally, changing `stage.json` might break replays.
-
