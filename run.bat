@@ -1,4 +1,4 @@
-setlocal
+setlocal enabledelayedexpansion
 
 if not exist "mods" (
   mkdir mods
@@ -6,6 +6,10 @@ if not exist "mods" (
 
 if not exist "tools" (
   mkdir tools
+)
+
+if not exist "scripts" (
+  mkdir scripts
 )
 
 if not exist "tools\ump.csx" (
@@ -22,6 +26,11 @@ if not exist "original_data.win" (
   copy "..\data.win" "original_data.win"
 )
 
-"tools\utmt\UndertaleModCli.exe" load "original_data.win" --scripts "src\main.csx" --output "..\data.win"
+set "SCRIPT_LIST="
+for %%f in ("scripts\*.csx") do (
+    set "SCRIPT_LIST=!SCRIPT_LIST! "%%~f""
+)
+
+"tools\utmt\UndertaleModCli.exe" load "original_data.win" --scripts !SCRIPT_LIST! "src\main.csx" --output "..\data.win"
 
 pause
