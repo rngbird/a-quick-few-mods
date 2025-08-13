@@ -26,11 +26,18 @@ if not exist "original_data.win" (
   copy "..\data.win" "original_data.win"
 )
 
+if exist "..\data.win" (
+  del "..\data.win"
+)
+copy "original_data.win" "..\data.win"
+
+cd ../
+
 set "SCRIPT_LIST="
-for %%f in ("scripts\*.csx") do (
+for %%f in ("modmanager\scripts\*.csx") do (
     set "SCRIPT_LIST=!SCRIPT_LIST! "%%~f""
 )
 
-"tools\utmt\UndertaleModCli.exe" load "original_data.win" --scripts !SCRIPT_LIST! "src\main.csx" --output "..\data.win"
+"modmanager\tools\utmt\UndertaleModCli.exe" load "data.win" --scripts !SCRIPT_LIST! "modmanager\src\main.csx" --output "data.win"
 
 pause
