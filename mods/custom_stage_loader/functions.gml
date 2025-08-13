@@ -18,6 +18,35 @@ function get_stage_config_to_room(config)
     return rm_arena;
 }
 
+function set_custom_stage()
+{
+    if (setting().match_stage >= 1000)
+    {
+        var _name = get_custom_stage_name_by_zone_stage(setting().match_stage);
+        if (file_exists("modmanager/stages/" + _name + "/stage.obj"))
+        {
+            obj_name = "modmanager/stages/" + _name + "/stage.obj";
+        }
+
+        if (variable_global_exists("customstages_texture")) {
+            sprite_delete(global.customstages_texture);
+            global.customstages_texture = -4;
+        }
+
+        var _texture_path = "modmanager/stages/" + _name + "/texture.png";
+        if (file_exists(_texture_path))
+        {
+            var _texture = sprite_add(_texture_path, 1, 0, 0, 0, 0);
+            if (_texture != -1)
+            {
+                sprite_set_offset(_texture, sprite_get_width(_texture) / 2, sprite_get_height(_texture) / 2);
+                global.customstages_texture = _texture;
+                texture = global.customstages_texture;
+            }
+        }
+    }
+}
+
 function get_custom_stage_config(stage)
 {
     var _path = "modmanager/stages/" + stage + "/config.json";
