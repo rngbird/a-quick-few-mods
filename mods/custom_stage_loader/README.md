@@ -42,6 +42,8 @@ Arena:
 
 If this file is missing or has an invalid stage name, it will automatically default to the "arena" stage.
 
+You can also use `texture.png` to add custom colors to your map.
+
 ## Limitations with custom stages
 
 - You cannot add or remove maps while you are at the map selection screen. You'll need to get out of the map selection and go back to it, in order for the map list to update.
